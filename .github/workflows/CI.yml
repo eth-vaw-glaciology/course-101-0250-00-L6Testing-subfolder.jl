@@ -28,5 +28,5 @@ jobs:
             ${{ runner.os }}-test-
             ${{ runner.os }}-
       - uses: julia-actions/julia-buildpkg@v1
-      - run: julia --check-bounds=yes --color=yes -e 'cd("<subfolder-of-julia-project>");
+      - run: julia --check-bounds=yes --color=yes -e 'cd("subfolder");
                                                       import Pkg; Pkg.activate("."); Pkg.test()'
