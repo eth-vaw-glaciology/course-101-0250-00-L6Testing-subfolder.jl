@@ -8,16 +8,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        julia-version: ['1.6']
+        julia-version: ['1.9']
         julia-arch: [x64]
         os: [ubuntu-latest]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: julia-actions/setup-julia@v1
         with:
           version: ${{ matrix.julia-version }}
           arch: ${{ matrix.julia-arch }}
-      - uses: actions/cache@v1
+      - uses: actions/cache@v3
         env:
           cache-name: cache-artifacts
         with:
@@ -27,6 +27,6 @@ jobs:
             ${{ runner.os }}-test-${{ env.cache-name }}-
             ${{ runner.os }}-test-
             ${{ runner.os }}-
-      - uses: julia-actions/julia-buildpkg@v1
-      - run: julia --check-bounds=yes --color=yes -e 'cd("subfolder");
-                                                      import Pkg; Pkg.activate("."); Pkg.test()'
+      - uses: julia-actions/julia-buildpkg@latest
+      - run: julia --color=yes -e 'cd("subfolder");
+                                   import Pkg; Pkg.activate("."); Pkg.test()'
