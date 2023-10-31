@@ -1,4 +1,4 @@
-[![CI action](https://github.com/eth-vaw-glaciology/course-101-0250-00-L6Testing.jl/actions/workflows/ci.yml/badge.svg)](https://github.com/eth-vaw-glaciology/course-101-0250-00-L6Testing.jl/actions/workflows/ci.yml)
+[![CI action](https://github.com/eth-vaw-glaciology/course-101-0250-00-L6Testing-subfolder.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/eth-vaw-glaciology/course-101-0250-00-L6Testing-subfolder.jl/actions/workflows/CI.yml)
 
 # Showcase unit and integration testing
 
