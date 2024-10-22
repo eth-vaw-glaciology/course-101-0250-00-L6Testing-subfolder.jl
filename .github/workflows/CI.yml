@@ -13,11 +13,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: julia-actions/setup-julia@v1
+      - uses: julia-actions/setup-julia@latest
         with:
           version: ${{ matrix.julia-version }}
           arch: ${{ matrix.julia-arch }}
       - uses: julia-actions/cache@v1
       - uses: julia-actions/julia-buildpkg@latest
-      - run: julia --color=yes -e 'cd("subfolder");
-                                   import Pkg; Pkg.activate("."); Pkg.test()'
+      - uses: julia-actions/julia-runtest@latest
+        with: 
+          project: "subfolder"
